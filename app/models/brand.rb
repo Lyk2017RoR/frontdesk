@@ -11,4 +11,11 @@
 
 class Brand < ApplicationRecord
   has_many :products
+
+  validates :title, presence:  true
+  validate :slug_parameterize
+
+  def slug_parameterize
+    self.slug = title.parameterize
+  end
 end
