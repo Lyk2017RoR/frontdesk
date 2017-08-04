@@ -26,4 +26,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable
 
   has_one :profile, inverse_of: :user
+  enum role: %i[client admin]
+
 end
