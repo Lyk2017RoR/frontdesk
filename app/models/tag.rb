@@ -10,6 +10,6 @@
 #
 
 class Tag < ApplicationRecord
-  validates :name, :slug, presence: true
+  validates :title, :slug, presence: true
   has_and_belongs_to_many :products
 end
