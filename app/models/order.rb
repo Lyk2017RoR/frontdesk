@@ -1,4 +1,4 @@
 class Order < ApplicationRecord
   belongs_to :user
-  validates :adress, :user, presence: true 
+  validates :address, :user, presence: true 
 end
