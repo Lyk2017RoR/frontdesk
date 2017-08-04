@@ -15,4 +15,11 @@ class Product < ApplicationRecord
   has_and_belongs_to_many :tags, dependent: :destroy
   belongs_to :category
   belongs_to :brand
+
+  validates :title, :content, presence:  true
+  validate : slug_parameterize
+
+  def slug_parameterize
+    self.slug == title.parameterize
+  end
 end
