@@ -56,17 +56,22 @@
                 </button>
                 <a class="navbar-brand" href="#">Frontdesk</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <div class="collapse navbar-collapse" id="brands-dropdown">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Anasayfa</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Markalar <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><%=link_to "Marka ekle", new_brand_url %></li>
+                            <li><%=link_to "Tüm Markalar", brands_url %></li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="#">Hakkımızda</a>
-                    </li>
-                    <li>
-                        <a href="#">İletişim</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kategoriler <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><%=link_to "Kategori ekle", new_category_url %></li>
+                            <li><%=link_to "Tüm Kategoriler", categories_url %></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
