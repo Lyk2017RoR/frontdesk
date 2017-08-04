@@ -17,9 +17,9 @@ class Product < ApplicationRecord
   belongs_to :brand
 
   validates :title, :content, presence:  true
-  validate : slug_parameterize
+  validate :slug_parameterize
 
   def slug_parameterize
-    self.slug == title.parameterize
+    self.slug = title.parameterize
   end
 end

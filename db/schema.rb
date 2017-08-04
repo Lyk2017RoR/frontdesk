@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20170804133254) do
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.text "content"
+    t.text "slug"
     t.integer "category_id"
     t.integer "brand_id"
     t.datetime "created_at", null: false
