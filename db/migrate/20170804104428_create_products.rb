@@ -3,6 +3,7 @@ class CreateProducts < ActiveRecord::Migration[5.1]
     create_table :products do |t|
       t.string :title
       t.text :content
+      t.text :slug
       t.references :category
       t.references :brand
 
