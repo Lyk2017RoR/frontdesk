@@ -16,7 +16,7 @@ class Product < ApplicationRecord
   belongs_to :category
   belongs_to :brand
 
-  validates :title, :content, :price presence:  true
+  validates :title, :content, :price, presence:  true
   validate :slug_parameterize
 
   def slug_parameterize
