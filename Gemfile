@@ -38,6 +38,12 @@ gem 'devise'
 #adding simple_form gem
 gem 'simple_form'
 
+#adding paperclip gem
+#gem "paperclip", "~> 5.0.0"
+gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
+
+
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
