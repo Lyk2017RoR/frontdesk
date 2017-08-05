@@ -28,21 +28,29 @@
                   <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ürünler <span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                          <li><%=link_to "Ürün ekle", new_product_url %></li>
+                          <% if admin? %> <li>
+                            <%=link_to "Ürün ekle", new_product_url %>
+                          </li> <% end %>
                           <li><%=link_to "Tüm Ürünler", products_url %></li>
+
+
                       </ul>
                   </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Markalar <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><%=link_to "Marka ekle", new_brand_url %></li>
+                            <% if admin? %> <li>
+                              <li><%=link_to "Marka ekle", new_brand_url %>
+                              </li> <% end %>
                             <li><%=link_to "Tüm Markalar", brands_url %></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kategoriler <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                          <% if admin? %> <li>
                             <li><%=link_to "Kategori ekle", new_category_url %></li>
+                              </li> <% end %>
                             <li><%=link_to "Tüm Kategoriler", categories_url %></li>
                         </ul>
                     </li>

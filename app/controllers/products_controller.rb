@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :find_product, only: %i[edit show update destroy]
-  before_action :authorize_user, only: %i[create edit update destroy]
+  before_action :authorize_user, expect: %i[index show]
 
   def index
     @products = Product.all
@@ -38,7 +38,6 @@ class ProductsController < ApplicationController
     else
       render 'edit'
     end
-
   end
 
   private
@@ -50,12 +49,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-
   def authorize_user
-    if current_user.role != :admin
+    if current_user == nil or current_user.role != :admin
       return head(401)
     end
-
   end
 
 end
