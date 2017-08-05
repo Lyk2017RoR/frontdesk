@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root to: 'static_pages#welcome'
   resources :brands
   resources :categories
+  resources :products
+  
 
 
 end
