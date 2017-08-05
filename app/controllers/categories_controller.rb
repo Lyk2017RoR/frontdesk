@@ -40,7 +40,7 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:title)
+    params.require(:category).permit(:title, :image)
   end
   def get_category
     @category = Category.find(params[:id])
