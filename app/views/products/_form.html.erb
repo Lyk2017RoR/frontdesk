@@ -11,5 +11,13 @@
       <%= f.label :category %><br>
       <%= f.collection_select(:category_id, Category.all, :id, :title) %>
     </p>
+
+    <p>
+      <div class="field">
+      <%= f.label :tag, "Tags" %><br />
+      <%= f.collection_select(:tag_ids, Tag.all, :id, :title ,{}, :multiple => true) %>
+
+
+      </div>
   <p><%= f.button :submit %></p>
 <% end %>

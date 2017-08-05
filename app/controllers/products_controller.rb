@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
     @product = Product.new
     @categories = Category.all.map { |c| [c.title, c.id] }
     @brands = Brand.all.map { |c| [c.title, c.id] }
+    @tags = Tag.all.map { |c| [c.title, c.id ]}
   end
 
   def create
@@ -29,6 +30,7 @@ class ProductsController < ApplicationController
   def update
     @product.category_id = params[:category_id]
     @product.brand_id = params[:brand_id]
+    @product.tag_id = params[:tag_ids]
 
     if @product.update(product_params)
       redirect_to product_path(@product)
@@ -40,7 +42,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:title, :content, :category_id, :brand_id, :price)
+    params.require(:product).permit(:title, :content, :category_id, :brand_id, :price, tag_ids: [])
   end
 
   def find_product
