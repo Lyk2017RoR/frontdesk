@@ -5,6 +5,7 @@
 #  id          :integer          not null, primary key
 #  title       :string
 #  content     :text
+#  slug        :text
 #  category_id :integer
 #  brand_id    :integer
 #  created_at  :datetime         not null

@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :find_product, only: %i[edit show update destroy]
+  before_action :authorize_user, only: %i[create edit update destroy]
+
   def index
     @products = Product.all
   end
@@ -11,6 +13,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+
     @product = Product.new(product_params)
     if @product.save
       redirect_to @product
@@ -46,4 +49,13 @@ class ProductsController < ApplicationController
   def find_product
     @product = Product.find(params[:id])
   end
+
+
+  def authorize_user
+    if current_user.role != :admin
+      return head(401)
+    end
+
+  end
+
 end

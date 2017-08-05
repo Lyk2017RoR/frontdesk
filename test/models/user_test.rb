@@ -17,6 +17,7 @@
 #  password               :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  role                   :integer          default("client")
 #
 
 require 'test_helper'
